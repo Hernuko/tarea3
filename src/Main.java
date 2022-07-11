@@ -1,30 +1,54 @@
 public class Main {
-
-    public static int sumar(int a, int b, int c){
-        return a+b+c;
-    }
     public static void main(String[] args) {
-        int resultado = sumar(3,5,10);
-        System.out.println(resultado);
-        Coche miCoche = new Coche();
-        miCoche.sumarPuertas();
-        System.out.println(miCoche.getCantPuertas());
+
+        Persona persona = new Persona("hernan", 28, 4775602);
+        System.out.println(persona.getNombre());
+        System.out.println(persona.getEdad());
+        System.out.println(persona.getTelefono());
+
+        Persona persona2 = new Persona();
+        persona2.setNombre("alan");
+        persona2.setEdad(32);
+        persona2.setTelefono(4823767);
+        System.out.println(persona2.getNombre());
+        System.out.println(persona2.getEdad());
+        System.out.println(persona2.getTelefono());
 
     }
 
+    public static class Persona {
+        private String nombre;
+        private int edad;
+        private int telefono;
 
-}
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
 
-class Coche {
+        public void setEdad(int edad) {
+            this.edad = edad;
+        }
 
-    private int cantPuertas=0;
+        public void setTelefono(int telefono) {
+            this.telefono = telefono;
+        }
 
-    public int getCantPuertas() {
-        return cantPuertas;
+        public String getNombre() {
+            return nombre;
+        }
+        public int getEdad(){
+            return edad;
+        }
+        public int getTelefono(){
+            return telefono;
+        }
+        public Persona(){};
+
+        public Persona(String nombre, int edad, int telefono) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.telefono = telefono;
+        }
+
     }
-
-    public void sumarPuertas(){
-        cantPuertas++;
-    }
-
 }
